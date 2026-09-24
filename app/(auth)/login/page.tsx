@@ -34,7 +34,7 @@ export default function LoginPage() {
       return;
     }
 
-    login({ email: data.username, password: data.password })
+    login({ username: data.username, password: data.password })
       .then(() => {
         MyToast.success("Login Berhasil");
         router.push("/dashboard");
