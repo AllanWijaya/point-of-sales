@@ -13,6 +13,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     {
       key: "dashboard",
       label: "",
+      icon: "lucide:dashboard",
       children: [
         {
           key: "dashboard",
@@ -25,6 +26,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     {
       key: "core-item",
       label: "CORE ITEM",
+      icon: "lucide:dashboard",
       children: [
         {
           key: "product",

@@ -1,8 +1,8 @@
 "use client";
 
+import { useAuth } from "@/core/hooks/AuthContext";
 import { Button, colorConfig, Icon, Input } from "@/my-package/wijaya-ui";
 import { MyToast } from "@/my-package/wijaya-ui";
-import { useAuth } from "@/my-package/wijaya-ui";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 

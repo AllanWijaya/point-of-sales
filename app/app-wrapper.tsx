@@ -1,6 +1,6 @@
 "use client";
 
-import { AuthProvider } from "@/my-package/wijaya-ui";
+import { AuthProvider } from "@/core/hooks/AuthContext";
 import { ToasterContainer } from "@/my-package/wijaya-ui";
 
 export function AppWrapper({ children }: { children: React.ReactNode }) {

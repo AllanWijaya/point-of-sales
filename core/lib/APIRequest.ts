@@ -10,6 +10,15 @@ interface APIRequestOptions<TBody = unknown> {
   signal?: AbortSignal;
 }
 
+const AUTH_TOKEN_KEY = "auth_token";
+
+export function setAuthToken(token: string | null): void {
+  if (typeof window === "undefined") return;
+
+  if (token) window.localStorage.setItem(AUTH_TOKEN_KEY, token);
+  else window.localStorage.removeItem(AUTH_TOKEN_KEY);
+}
+
 export async function APIRequest<TResponse = unknown, TBody = unknown>({
   url,
   params,
@@ -32,13 +41,20 @@ export async function APIRequest<TResponse = unknown, TBody = unknown>({
   const requestUrl =
     `${API_BASE_URL}${url}` + (queryString ? `?${queryString}` : "");
 
+  const token =
+    typeof window !== "undefined"
+      ? window.localStorage.getItem(AUTH_TOKEN_KEY)
+      : null;
+  const headers: Record<string, string> = {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  };
+  if (token) headers.Authorization = `Bearer ${token}`;
+
   const response = await fetch(requestUrl, {
     method,
     signal,
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
+    headers,
     credentials: "include",
     body:
       body !== undefined && method !== "GET" ? JSON.stringify(body) : undefined,
