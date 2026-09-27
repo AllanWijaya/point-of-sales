@@ -1,8 +1,7 @@
 "use client";
 
 import { useAuth } from "@/core/hooks/AuthContext";
-import { Button, colorConfig, Icon, Input } from "@/my-package/wijaya-ui";
-import { MyToast } from "@/my-package/wijaya-ui";
+import { Button, colorConfig, Icon, Input, MyToast } from "@wijaya/ui";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -126,6 +125,7 @@ export default function LoginPage() {
                 autoComplete="current-password"
               />
 
+              <Button className="absolte r">Tes</Button>
               <button
                 type="button"
                 onClick={() => setShowPassword((value) => !value)}

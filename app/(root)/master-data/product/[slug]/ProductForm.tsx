@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "@/my-package/wijaya-ui";
+import { Input } from "@wijaya/ui";
 
 type ProductData = {
   uuid: string;

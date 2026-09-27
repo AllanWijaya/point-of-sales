@@ -1,4 +1,4 @@
-import type { TableColumn } from "@/my-package/wijaya-ui";
+import type { TableColumn } from "@wijaya/ui";
 
 export const productColumns: TableColumn<ProductData>[] = [
   {

@@ -1,2 +1,6 @@
+packages:
+  - 'my-package/wijaya-ui'
 allowBuilds:
-  unrs-resolver: set this to true or false
+  '@parcel/watcher': true
+  esbuild: true
+  unrs-resolver: false

@@ -1,6 +1,6 @@
 "use client";
 
-import { Sidebar, SidebarMenuItem } from "@/my-package/wijaya-ui";
+import { Sidebar, SidebarMenuItem } from "@wijaya/ui";
 import { usePathname, useRouter } from "next/navigation";
 import { type ReactNode } from "react";
 
@@ -13,7 +13,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     {
       key: "dashboard",
       label: "",
-      icon: "lucide:dashboard",
+      icon: "lucide:layout-dashboard",
       children: [
         {
           key: "dashboard",
@@ -26,7 +26,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     {
       key: "core-item",
       label: "CORE ITEM",
-      icon: "lucide:dashboard",
+      icon: "lucide:hard-drive",
       children: [
         {
           key: "product",
@@ -48,17 +48,17 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
     <main className="min-h-screen">
       <div className="flex">
-        <div className="px-2 w-[200] border border-slate-200 min-h-screen">
+        <div className="px-2 border border-slate-200 min-h-screen">
           <Sidebar
             header={
               <div className="text-center">
                 <h1>
                   <strong>Point of Sales</strong>
                 </h1>
-                <hr />
               </div>
             }
             menu={menu}
+            activeMenuKey={activeSection}
             activeSection={activeSection}
             onSelectSection={(_id) => handleSidebarClick(_id)}
           />

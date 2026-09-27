@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "./style/css/style.css";
-import { ToasterContainer } from "@/my-package/wijaya-ui/src/components/toast";
+import "@wijaya/ui/dist/styles.css";
+import { ToasterContainer } from "@wijaya/ui";
 import { AppWrapper } from "./app-wrapper";
 
 const geistSans = Geist({
